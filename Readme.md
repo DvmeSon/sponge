@@ -1,5 +1,6 @@
 <h3>Project setup steps:</h3>
 
+- change root folder name (to avoid "Command 'python' not found" in venv) using <br> ```mv grinddev-boilerplate [newname]```
 - create venv <br> ```python -m venv [envname]```
 - change .gitignore file to ignore new .env file
 - run venv
