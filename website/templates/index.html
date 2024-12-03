@@ -43,10 +43,15 @@
             <i class="fas fa-coins button-icon"></i>
         </a>
     </div>
+
 </section>
 
-<section id="community" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
+<section id="community" class="py-16 relative">
+    <!-- Updated background colors to light yellow -->
+    <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-yellow-100/70 opacity-70"></div>
+    <div class="absolute inset-0" style="background-image: url('{% static 'images/bubble-pattern.png' %}'); opacity: 0.1;"></div>
+
+    <div class="container mx-auto px-4 relative">  <!-- Added relative for z-index context -->
         <!-- Section Header -->
         <div class="text-center mb-12">
             <h2 class="text-[60px] mb-3 font-['Bangers'] text-ocean-blue">Meet the Bikini Bottom Gang! 🌊</h2>
@@ -141,7 +146,7 @@
 
 
 
-<section class="krabby-counter py-12 bg-light-blue">
+<section class="krabby-counter py-12 bg-light-blue shadow-2xl">
     <div class="container text-center mx-auto">
         <h2 class="mb-4 font-['Bangers'] text-4xl text-shadow-lg">Mr. Krabs' Krabby Patty Profits 🍔</h2>
         <div class="counter-container relative">
@@ -190,7 +195,11 @@
     </div>
 </section>
 
-<section class="quotes-section py-10 bg-white">
+<section class="quotes-section py-10 relative">
+    <!-- Updated background colors to light yellow -->
+    <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-yellow-100/70 opacity-70"></div>
+    <div class="absolute inset-0" style="background-image: url('{% static 'images/bubble-pattern.png' %}'); opacity: 0.1;"></div>
+
     <div class="container text-center relative mx-auto">
         <img class="absolute left-[254px] top-[-85px]" width="250" src="{% static 'images/squidward.png' %}" alt="Squidward" class="squidward-image mb-4">
         <h2 class="mb-10 font-['Bangers'] text-4xl text-shadow-lg text-ocean-blue">Words of Wisdom 🌊</h2>
@@ -200,10 +209,10 @@
         </div>
         <div class="mt-4">
             <a href="https://x.com/solspongebobcto" target="_blank">
-            <button class="cartoon-button secondary bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg transition-all transform hover:scale-105 hover:shadow-xl">
-                <span class="button-text">Join the crew!</span>
-                <i class="fas fa-laugh-squint button-icon"></i>
-            </button>
+                <button class="cartoon-button secondary bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg transition-all transform hover:scale-105 hover:shadow-xl">
+                    <span class="button-text">Join the crew!</span>
+                    <i class="fas fa-laugh-squint button-icon"></i>
+                </button>
             </a>
         </div>
     </div>
