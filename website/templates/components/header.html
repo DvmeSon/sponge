@@ -17,17 +17,31 @@
 
             <!-- Navigation Links -->
             <div class="hidden lg:block" id="navbarNav">
-                <ul class="flex space-x-8">
+                <ul class="flex space-x-4">
                     <li>
-                        <a href="#home" class=" nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
+                        <a href="#home" class="nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
                             <i class="fas fa-home"></i> Home
                         </a>
                     </li>
                     <li>
-                        <a href="#community" class=" nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
+                        <a href="#community" class="nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
                             <i class="fas fa-users"></i> Community
                         </a>
                     </li>
+                    <div class="flex items-center">
+ <!-- Social Links -->
+ <li>
+    <a href="#" class="nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
+        <i class="fab fa-twitter"></i>
+    </a>
+</li>
+<li>
+    <a href="#" class="nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
+        <i class="fab fa-telegram"></i>
+    </a>
+</li>
+                    </div>
+                   
                 </ul>
             </div>
         </div>
@@ -49,10 +63,10 @@
                 nav.classList.remove('bg-transparent');
                 navContainer.classList.remove('py-4');
                 navContainer.classList.add('py-2');
-                // Change links to black text and yellow hover
+                // Change links to black text without hover effect
                 navLinks.forEach(link => {
                     link.classList.remove('text-white', 'hover:text-yellow-400');
-                    link.classList.add('text-black', 'hover:text-yellow-600');
+                    link.classList.add('text-black');
                 });
             } else {
                 nav.classList.remove('bg-yellow-400', 'shadow-lg');
@@ -61,8 +75,8 @@
                 navContainer.classList.add('py-4');
                 // Restore original link colors
                 navLinks.forEach(link => {
-                    link.classList.remove('text-black', 'hover:text-yellow-600');
-                    link.classList.add('text-white', 'hover:text-yellow-400');
+                    link.classList.remove('text-black');
+                    link.classList.add('text-white');
                 });
             }
 
