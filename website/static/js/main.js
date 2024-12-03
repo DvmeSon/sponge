@@ -8,11 +8,11 @@ const quotes = [
     { text: "Money money money! Sweet sweet money!", milestone: 50 },
     { text: "Hello, I like money! 🦀", milestone: 100 },
     { text: "The money is always right! 💰", milestone: 200 },
-    { text: "$2500? You're becoming a big spender like me! 🤑", milestone: 500 },
+    { text: "You're becoming a big spender like me! 🤑", milestone: 500 },
     { text: "I haven't seen this much money since the grand opening! 🏪", milestone: 1000 },
     { text: "I'm smelling a lot of money! *sniff sniff* 👃", milestone: 2000 },
     { text: "Did someone say MONEY?! 💵", milestone: 3000 },
-    { text: "$25000? Now that's what I call profit! 📈", milestone: 25000 },
+    { text: "Now that's what I call profit! 📈", milestone: 25000 },
     { text: "I can feel it in me claws... MORE MONEY! 🦀", milestone: 37500 },
     { text: "*wiping tears with money* I'm so proud! 😭", milestone: 50000 }
 ];
