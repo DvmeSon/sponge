@@ -820,6 +820,14 @@ body{
   height: 100%;
 }
 
+.h-\[68px\]{
+  height: 68px;
+}
+
+.\!h-\[68px\]{
+  height: 68px !important;
+}
+
 .w-12{
   width: 3rem;
 }
