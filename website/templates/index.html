@@ -5,7 +5,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<section class="hero-section" style="background-image: url('{% static 'images/main-3.jpg' %}'); background-size: cover; background-position: center; min-height: 90vh; overflow: hidden;">
+<section id="home" class="hero-section" style="background-image: url('{% static 'images/main-3.jpg' %}'); background-size: cover; background-position: center; min-height: 90vh; overflow: hidden;">
     <!-- Floating Bubbles -->
     <div class="bubbles">
         <div class="bubble"></div>
@@ -38,7 +38,7 @@
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<section id="community" class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="text-center mb-12">
@@ -461,6 +461,15 @@
     
 {% endblock %} 
 {% block extra_js %}
-<!-- At the bottom of your HTML file, before </body> -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 <script src="/static/js/main.js"></script>
 {% endblock %}
