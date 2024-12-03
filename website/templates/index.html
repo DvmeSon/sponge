@@ -1,0 +1,260 @@
+{% extends 'base/base.html' %}
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero-section" style="background-image: url('{% static 'images/main-3.jpg' %}'); background-size: cover; background-position: center; min-height: 90vh; overflow: hidden;">
+    <!-- Floating Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div class="hero-content text-center absolute top-0" style="padding-top: 6rem;">        
+        <h1 class="cartoon-title mb-0" style="font-family: 'Bangers', cursive;">Are Ya Ready, Kids?<br>$BOB is Here! 🧽</h1>
+        <p class="cartoon-subtitle">The cryptocurrency that lives in a pineapple under the sea!</p>
+        
+        <!-- Cartoon Style Buttons -->
+        <div class="d-flex justify-content-center gap-8 mb-10 animate__animated animate__fadeInUp animate__delay-1s">
+            <a href="#" class="cartoon-button primary">
+                <span class="button-text">Buy $BOB</span>
+                <i class="fas fa-coins button-icon"></i>
+            </a>
+            <a href="https://twitter.com/spongebobcoin" class="cartoon-button secondary">
+                <span class="button-text">Twitter</span>
+                <i class="fab fa-twitter button-icon"></i>
+            </a>
+            <a href="https://t.me/spongebobcoin" class="cartoon-button secondary">
+                <span class="button-text">Telegram</span>
+                <i class="fab fa-telegram button-icon"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="community-section py-16 bg-gradient-to-b from-blue-100 to-transparent">
+    <div class="container">
+        <div class="text-center mb-12">
+            <h2 class="display-4 mb-3" style="font-family: 'Bangers', cursive;">Meet the Bikini Bottom Gang! 🌊</h2>
+            <p class="lead text-muted">Where Every Citizen is Living the $BOB Life!</p>
+        </div>
+
+        <div class="row align-items-center">
+            <!-- Left Side Stats -->
+            <div class="col-lg-6 mb-8 mb-lg-0">
+                <div class="stats-grid">
+                    <div class="stat-card bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-users fa-2x me-3" style="color: #FF9F43"></i>
+                            <div>
+                                <h3 class="h2 mb-0">50,000+</h3>
+                                <p class="text-muted mb-0">Jellyfish Netters</p>
+                            </div>
+                        </div>
+                        <p class="mb-0 text-sm">"We've got more citizens than Bikini Bottom!"</p>
+                    </div>
+
+                    <div class="stat-card bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-hamburger fa-2x me-3" style="color: #FF6B6B"></i>
+                            <div>
+                                <h3 class="h2 mb-0">1M+</h3>
+                                <p class="text-muted mb-0">Krabby Patties Served</p>
+                            </div>
+                        </div>
+                        <p class="mb-0 text-sm">"Even Plankton couldn't steal these numbers!"</p>
+                    </div>
+
+                    <div class="stat-card bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-chart-line fa-2x me-3" style="color: #4834D4"></i>
+                            <div>
+                                <h3 class="h2 mb-0">24/7</h3>
+                                <p class="text-muted mb-0">Trading Hours</p>
+                            </div>
+                        </div>
+                        <p class="mb-0 text-sm">"We never close, just like the Krusty Krab!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Image and Quote -->
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <div class="community-image-wrapper rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="{% static 'images/8.png' %}" alt="Community Celebration" class="img-fluid hover:opacity-75 transition-opacity">
+                    </div>
+                    <div class="quote-bubble bg-white p-4 rounded-xl shadow-lg position-absolute" style="bottom: -20px; right: 20px; max-width: 300px;">
+                        <p class="mb-2" style="font-family: 'Bangers', cursive;">
+                            "I'm not just a community member, I'm a Goofy Goober! 🎸"
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'images/patrick.png' %}" alt="Patrick" class="rounded-circle" style="width: 40px; height: 40px;">
+                            <div class="ms-3">
+                                <h6 class="mb-0">Patrick Star</h6>
+                                <small class="text-muted">Professional Holder</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Banner -->
+        <div class="text-center mt-12">
+            <div class="bg-white rounded-xl p-6 shadow-lg inline-block">
+                <h4 class="mb-3" style="font-family: 'Bangers', cursive;">Ready to Join the Fun? 🎉</h4>
+                <p class="mb-4">Grab your jellyfishing net and dive into the most exciting community under the sea!</p>
+                <button class="btn btn-primary btn-lg px-6 rounded-pill">
+                    <i class="fas fa-fish me-2"></i>
+                    Join the School
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.stats-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.community-image-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.quote-bubble {
+    z-index: 2;
+    border-radius: 20px;
+}
+
+.quote-bubble::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    bottom: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) {
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+</style>
+
+<section class="features-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-coins fa-3x mb-3" style="color: var(--primary-color)"></i>
+                    <h3>Community Participation</h3>
+                    <p>Join our growing community and be part of the journey!</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-lock fa-3x mb-3" style="color: var(--primary-color)"></i>
+                    <h3>100% Safe</h3>
+                    <p>Liquidity locked forever in the Krusty Krab vault!</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-rocket fa-3x mb-3" style="color: var(--primary-color)"></i>
+                    <h3>Moon Mission</h3>
+                    <p>We're not just going to the moon, we're going to Rock Bottom!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <img src="{% static 'images/main-2.jpg' %}" alt="SpongeBob Gallery 1" class="img-fluid rounded shadow image-transition">
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'images/main-3.jpg' %}" alt="SpongeBob Gallery 2" class="img-fluid rounded shadow image-transition">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="meme-generator py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Meme of the Day 🎨</h2>
+        <div class="meme-container">
+            <img id="currentMeme" src="{% static 'images/meme1.jpg' %}" alt="SpongeBob Meme" class="img-fluid rounded">
+            <button class="btn btn-primary mt-3" onclick="nextMeme()">Next Meme</button>
+        </div>
+    </div>
+</section>
+
+<section class="krabby-patty-counter py-5 bg-light-blue">
+    <div class="container text-center">
+        <h2 class="mb-4">Krabby Patty Counter 🍔</h2>
+        <div class="counter-container">
+            <div class="patty-count">
+                <span id="pattyCount">0</span> Krabby Patties
+            </div>
+            <div class="patty-image" id="pattyImage">
+                <img src="{% static 'images/patty.webp' %}" alt="Krabby Patty" class="patty">
+            </div>
+            <div class="counter-stats">
+                <p>Patties per second: <span id="pps">0</span></p>
+                <p>Total value: $<span id="pattyValue">0</span></p>
+            </div>
+            <button class="btn btn-primary mt-3" onclick="clickPatty()">Make a Patty!</button>
+        </div>
+    </div>
+</section>
+
+<section class="quotes-section py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Words of Wisdom 🌊</h2>
+        <div class="quote-box" id="quoteBox">
+            <p class="quote-text">"I'm ready, I'm ready, I'm ready... to buy $SPONGE!"</p>
+            <p class="quote-author">- SpongeBob SquarePants</p>
+        </div>
+        <div class="mt-4">
+            <button class="cartoon-button secondary" onclick="playLaugh()">
+                <span class="button-text">Join the crew!</span>
+                <i class="fas fa-laugh-squint button-icon"></i>
+            </button>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="nextQuote()">Next Quote</button>
+    </div>
+</section>
+
+{% endblock %} 

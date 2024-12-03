@@ -1,12 +1,11 @@
 <h3>Project setup steps:</h3>
 
-- change root folder name (to avoid "Command 'python' not found" in venv) using <br> ```mv grinddev-boilerplate [newname]```
+
 - create venv <br> ```python -m venv [envname]```
 - change .gitignore file to ignore new .env file
 - run venv
 - install requirements <br> ```pip install -r requirements.txt```
 - install ```pip install pip-upgrader``` and run ```pip-upgrade```
-- change project name using <br> ```python manage.py renameproject grinddev-boilerplate [newname]```
 - change ```wsgi.py``` to use production settings
 - install Tailwindcss and Flowbite packages <br>
 Tailwindcss:

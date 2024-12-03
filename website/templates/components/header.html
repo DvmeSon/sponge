@@ -1,0 +1,40 @@
+{%load static%}
+<nav class="cartoon-nav relative z-10 bg-transparent">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo Section -->
+            <a class="brand-logo flex items-center space-x-3 hover:transform hover:scale-105 transition-transform duration-300" href="{% url 'website:home' %}">
+                <img src="{% static 'images/1.png' %}" alt="SpongeBob Coin" class="h-12 w-12 animate-bounce hover:animate-none">
+                <span class="text-2xl font-bold text-yellow-400 font-cartoon drop-shadow-[2px_2px_0_#000] hover:text-yellow-300 transition-colors">SpongeBob Coin</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="cartoon-menu-btn lg:hidden bg-yellow-400 p-2 rounded-lg border-4 border-black shadow-cartoon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="block w-6 h-0.5 bg-black mb-1"></span>
+                <span class="block w-6 h-0.5 bg-black mb-1"></span>
+                <span class="block w-6 h-0.5 bg-black"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:block" id="navbarNav">
+                <ul class="flex space-x-8">
+                    <li>
+                        <a href="{% url 'website:home' %}" class="group nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
+                            <i class="fas fa-home group-hover:animate-bounce"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'website:tokenomics' %}" class="group nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
+                            <i class="fas fa-coins group-hover:animate-bounce"></i> Tokenomics
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'website:community' %}" class="group nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
+                            <i class="fas fa-users group-hover:animate-bounce"></i> Community
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

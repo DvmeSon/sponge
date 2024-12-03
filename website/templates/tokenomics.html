@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tokenomics{% endblock %}
+
+{% block content %}
+<section class="tokenomics-hero py-5">
+    <div class="container text-center">
+        <h1 class="display-3 mb-4">$SPONGE Tokenomics</h1>
+        <p class="lead">Fair Launch, No Presale, No Team Tokens!</p>
+    </div>
+</section>
+
+<section class="token-distribution py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Token Distribution</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="distribution-card">
+                    <div class="chart-container">
+                        <!-- Add a placeholder for chart -->
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="distribution-details">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <i class="fas fa-swimming-pool"></i>
+                            <strong>Liquidity Pool:</strong> 94%
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-bullhorn"></i>
+                            <strong>Marketing:</strong> 3%
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-users"></i>
+                            <strong>Community Rewards:</strong> 3%
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="taxes py-5 bg-light-blue">
+    <div class="container">
+        <h2 class="text-center mb-5">Transaction Taxes</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="tax-card">
+                    <h3><i class="fas fa-shopping-cart"></i> Buy Tax: 5%</h3>
+                    <ul>
+                        <li>2% Marketing</li>
+                        <li>2% Liquidity</li>
+                        <li>1% Community Rewards</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="tax-card">
+                    <h3><i class="fas fa-store"></i> Sell Tax: 5%</h3>
+                    <ul>
+                        <li>2% Marketing</li>
+                        <li>2% Liquidity</li>
+                        <li>1% Community Rewards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Security Features</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="security-card">
+                    <i class="fas fa-lock-alt fa-3x mb-3"></i>
+                    <h4>Liquidity Locked</h4>
+                    <p>Initial liquidity locked for 1 year in the Krusty Krab vault!</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="security-card">
+                    <i class="fas fa-shield-alt fa-3x mb-3"></i>
+                    <h4>Contract Audited</h4>
+                    <p>Smart contract verified and audited by Patrick Star himself!</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="security-card">
+                    <i class="fas fa-code fa-3x mb-3"></i>
+                    <h4>Renounced Ownership</h4>
+                    <p>Contract ownership renounced to Davy Jones' locker!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

@@ -2,21 +2,21 @@
 module.exports = {
     content: [
         './website/templates/**/*.html',
-        './node_modules/flowbite/**/*.js'
+        './website/static/**/*.js'
     ],
     theme: {
-        colors: {
-            primary: '#68a92f',
-        },
         extend: {
-            fontFamily: {
-                lato: ['Lato'],
-                amatic: ['Amatic SC'],
-                montserrat: ['Montserrat']
+            colors: {
+                'spongebob-yellow': '#FED41D',
+                'spongebob-brown': '#A76E06',
+                'ocean-blue': '#1CA3EC'
             },
-        },
+            fontFamily: {
+                'lato': ['Lato', 'sans-serif'],
+
+                'cartoon': ['Comic Sans MS', 'cursive']
+            }
+        }
     },
-    plugins: [
-        require('flowbite/plugin')
-    ]
+    plugins: []
 }
