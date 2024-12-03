@@ -10,7 +10,7 @@ DEBUG = False
 SECRET_KEY = 'nr329rj239e193i012-3ke102mje19nh21983j103j102'
 
 # Allow all hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['bobcto.fun', 'www.bobcto.fun']
 
 try:
     from .local import *
