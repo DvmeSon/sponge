@@ -17,7 +17,7 @@
 
             <!-- Navigation Links -->
             <div class="hidden lg:block" id="navbarNav">
-                <ul class="flex space-x-4">
+                <ul class="flex lg:space-x-4">
                     <li>
                         <a href="#home" class="nav-link cartoon-link text-lg font-cartoon text-white hover:text-yellow-400 transition-colors duration-300">
                             <i class="fas fa-home"></i> Home
@@ -47,15 +47,25 @@
         </div>
     </div>
 </nav>
-
+<style>
+    @media (max-width: 1024px) {
+    .scrolled-nav {
+        background-color: rgb(250 204 21) !important;
+        color: #000 !important;
+    }
+</style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const nav = document.getElementById('mainNav');
+        const navbar_nav = document.getElementById('navbarNav');
         const navLinks = document.querySelectorAll('.nav-link');
         const navContainer = nav.querySelector('.flex.items-center.justify-between');
         let lastScroll = 0;
+        let isMobileMenuOpen = false;
 
         window.addEventListener('scroll', function() {
+            if (isMobileMenuOpen) return;
+
             const currentScroll = window.pageYOffset;
 
             if (currentScroll > 100) {
@@ -69,6 +79,7 @@
                     link.classList.add('text-black');
                 });
             } else {
+
                 nav.classList.remove('bg-yellow-400', 'shadow-lg');
                 nav.classList.add('bg-transparent');
                 navContainer.classList.remove('py-2');
@@ -81,6 +92,51 @@
             }
 
             lastScroll = currentScroll;
+        });
+
+        // Mobile menu functionality
+        const menuButton = document.querySelector('.cartoon-menu-btn');
+        const navbarNav = document.getElementById('navbarNav');
+        
+        menuButton.addEventListener('click', function() {
+            // Toggle the 'hidden' class
+            navbarNav.classList.toggle('hidden');
+            
+            // Toggle aria-expanded attribute
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            
+            // Optional: Add slide animation classes
+            if (navbarNav.classList.contains('hidden')) {
+                navbarNav.classList.remove('animate-slide-in');
+                navbarNav.classList.add('animate-slide-out');
+                navbar_nav.classList.add('scrolled-nav');
+
+            } else {
+                navbar_nav.classList.add('scrolled-nav');
+
+                navbarNav.classList.remove('animate-slide-out');
+                navbarNav.classList.add('animate-slide-in');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navbarNav.contains(event.target) && !menuButton.contains(event.target)) {
+                if (!navbarNav.classList.contains('hidden')) {
+                    navbarNav.classList.add('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+
+        // Close mobile menu when window is resized to desktop view
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 1024) { // lg breakpoint
+                navbarNav.classList.remove('hidden');
+            } else {
+                navbarNav.classList.add('hidden');
+            }
         });
     });
 </script>
