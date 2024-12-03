@@ -1,105 +1,137 @@
-// SpongeBob Quotes
+let pattyCount = 0;
+let money = 0;
+let totalPatties = 0;
+let pattiesPerSecond = 0;
+const CLICK_VALUE = 10; // $5 per click
 const quotes = [
-    { text: "I'm ready, I'm ready, I'm ready... to buy $SPONGE!", author: "SpongeBob SquarePants" },
-    { text: "The money is always right!", author: "Mr. Krabs" },
-    { text: "To the moon? No, this is Patrick!", author: "Patrick Star" },
-    { text: "F is for Funds that pump up and down!", author: "SpongeBob SquarePants" },
-    { text: "I went to college!", author: "Patrick Star" }
+    { text: "Ar ar ar ar! Each patty is $5 in me pocket!", milestone: 20 },
+    { text: "Money money money! Sweet sweet money!", milestone: 50 },
+    { text: "Hello, I like money! 🦀", milestone: 100 },
+    { text: "The money is always right! 💰", milestone: 200 },
+    { text: "$2500? You're becoming a big spender like me! 🤑", milestone: 500 },
+    { text: "I haven't seen this much money since the grand opening! 🏪", milestone: 1000 },
+    { text: "I'm smelling a lot of money! *sniff sniff* 👃", milestone: 2000 },
+    { text: "Did someone say MONEY?! 💵", milestone: 3000 },
+    { text: "$25000? Now that's what I call profit! 📈", milestone: 25000 },
+    { text: "I can feel it in me claws... MORE MONEY! 🦀", milestone: 37500 },
+    { text: "*wiping tears with money* I'm so proud! 😭", milestone: 50000 }
 ];
 
-let currentQuote = 0;
-
-function nextQuote() {
-    const quoteBox = document.getElementById('quoteBox');
-    currentQuote = (currentQuote + 1) % quotes.length;
-    quoteBox.classList.add('shake');
-    
-    setTimeout(() => {
-        quoteBox.querySelector('.quote-text').textContent = quotes[currentQuote].text;
-        quoteBox.querySelector('.quote-author').textContent = `- ${quotes[currentQuote].author}`;
-        quoteBox.classList.remove('shake');
-    }, 500);
-}
-
-// Krabby Patty Counter
-let patties = 0;
-let pps = 0; // patties per second
-let autoClickerCost = 10;
-
 function clickPatty() {
-    patties++;
+    pattyCount += 1;
+    totalPatties += 1;
+    money += CLICK_VALUE;
     updateDisplay();
-    
-    const pattyImg = document.querySelector('.patty');
-    pattyImg.classList.add('patty-bounce');
-    setTimeout(() => pattyImg.classList.remove('patty-bounce'), 300);
-    
-    // Play a quick "ding" sound
-    const ding = new Audio('/static/sounds/spatula-flip.mp3');
-    ding.volume = 0.2;
-    ding.play();
+    showMoneyPopup();
+    showDollarAnimation();
+    checkMilestones();
 }
 
-function updateDisplay() {
-    document.getElementById('pattyCount').textContent = Math.floor(patties);
-    document.getElementById('pps').textContent = pps;
-    document.getElementById('pattyValue').textContent = (patties * 1.99).toFixed(2);
-}
-
-// Auto-increment patties
-setInterval(() => {
-    if (pps > 0) {
-        patties += pps / 10;
-        updateDisplay();
-    }
-}, 100);
-
-// SpongeBob Laugh Sound
-function playLaugh() {
-    const laugh = new Audio('/static/sounds/spongebob-laugh.mp3');
-    laugh.play();
-}
-
-// Meme Rotation
-const memes = ['meme1.jpg', 'meme2.jpg', 'meme3.jpg'];
-let currentMeme = 0;
-
-function nextMeme() {
-    const memeImg = document.getElementById('currentMeme');
-    currentMeme = (currentMeme + 1) % memes.length;
-    memeImg.classList.add('shake');
+function showMoneyPopup() {
+    const popup = document.createElement('div');
+    popup.className = 'money-popup';
+    popup.textContent = `+$${CLICK_VALUE}`;
     
-    setTimeout(() => {
-        memeImg.src = `/static/images/${memes[currentMeme]}`;
-        memeImg.classList.remove('shake');
-    }, 500);
+    const container = document.getElementById('moneyPopups');
+    const x = Math.random() * 80 + 10; // Random position between 10% and 90%
+    popup.style.left = `${x}%`;
+    
+    container.appendChild(popup);
+    setTimeout(() => popup.remove(), 1000);
 }
 
-// Mock Price Ticker
-function updatePrice() {
-    const price = (Math.random() * 0.0001).toFixed(8);
-    const volume = Math.floor(Math.random() * 1000000);
-    
-    document.getElementById('tokenPrice').textContent = `$${price}`;
-    document.getElementById('tokenVolume').textContent = `$${volume.toLocaleString()}`;
-}
-
-setInterval(updatePrice, 5000);
-updatePrice();
-
-// Image fade-in animation on scroll
-function handleScrollAnimations() {
-    const images = document.querySelectorAll('.image-transition');
-    
-    images.forEach(image => {
-        const rect = image.getBoundingClientRect();
-        const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
-        
-        if (isVisible) {
-            image.classList.add('fade-in');
+function checkMilestones() {
+    quotes.forEach(quote => {
+        if (Math.floor(money) === quote.milestone) {
+            showKrabsQuote(quote.text);
         }
     });
 }
 
-window.addEventListener('scroll', handleScrollAnimations);
-window.addEventListener('load', handleScrollAnimations); 
+function showKrabsQuote(quoteText) {
+    const quoteElement = document.getElementById('krabsQuote');
+    quoteElement.textContent = quoteText;
+    quoteElement.classList.remove('hidden');
+    
+    // Add fade-out animation after 2.5 seconds
+    setTimeout(() => {
+        quoteElement.style.opacity = '0';
+    }, 2500);
+    
+    // Hide element and reset opacity after fade completes
+    setTimeout(() => {
+        quoteElement.classList.add('hidden');
+        quoteElement.style.opacity = '1';
+    }, 3000);
+}
+
+function buyUpgrade(type) {
+    const costs = {
+        spatula: 10,
+        grill: 50
+    };
+    const increases = {
+        spatula: 1,
+        grill: 5
+    };
+    
+    if (money >= costs[type]) {
+        money -= costs[type];
+        pattiesPerSecond += increases[type];
+        costs[type] *= 1.5;
+        document.getElementById(`${type}Cost`).textContent = Math.floor(costs[type]);
+        updateDisplay();
+    }
+}
+
+function updateDisplay() {
+    // Add null checks for each element
+    const pattyCountElement = document.getElementById('pattyCount');
+    const moneyCountElement = document.getElementById('moneyCount');
+    const ppsElement = document.getElementById('pps');
+    const totalMoneyElement = document.getElementById('totalMoney');
+
+    if (pattyCountElement) {
+        pattyCountElement.textContent = Math.floor(pattyCount);
+    }
+    if (moneyCountElement) {
+        moneyCountElement.textContent = `$${Math.floor(money)}`;
+    }
+    if (ppsElement) {
+        ppsElement.textContent = pattiesPerSecond;
+    }
+    if (totalMoneyElement) {
+        totalMoneyElement.textContent = `$${Math.floor(money)}`;
+    }
+}
+
+// Initialize by hiding the quote bubble
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteElement = document.getElementById('krabsQuote');
+    if (quoteElement) {
+        quoteElement.classList.add('hidden');
+    }
+});
+
+// Update the interval function
+setInterval(() => {
+    pattyCount += pattiesPerSecond;
+    totalPatties += pattiesPerSecond;
+    money += pattiesPerSecond;
+    updateDisplay();
+}, 1000);
+
+function showDollarAnimation() {
+    const dollarSign = document.createElement('div');
+    dollarSign.className = 'dollar-animation';
+    dollarSign.textContent = '$';
+    
+    const pattyImage = document.getElementById('pattyImage');
+    const rect = pattyImage.getBoundingClientRect();
+    dollarSign.style.left = `${rect.left + rect.width / 2}px`;
+    dollarSign.style.top = `${rect.top}px`;
+    
+    document.body.appendChild(dollarSign);
+    
+    setTimeout(() => dollarSign.remove(), 1000);
+} 
