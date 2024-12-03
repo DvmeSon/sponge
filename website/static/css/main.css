@@ -687,6 +687,10 @@ body{
   bottom: -480px;
 }
 
+.top-\[-60px\]{
+  top: -60px;
+}
+
 .z-10{
   z-index: 10;
 }
