@@ -46,6 +46,85 @@
 
 </section>
 
+
+
+<section class="wallet-section pb-24 pt-12 relative bg-[#F4F7EF] shadow-xl">
+    <!-- Background styling similar to other sections -->
+    <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-yellow-100/70 opacity-70"></div>
+    <div class="absolute inset-0" style="background-image: url('{% static 'images/bubble-pattern.png' %}'); opacity: 0.1;"></div>
+
+    <div class="container mx-auto px-4 relative text-black">
+        <div class="text-center mb-12 max-[768px]:mb-20">
+            <h2 class="text-[60px] mb-3 font-['Bangers'] text-ocean-blue">Support the Krusty Krab! 🦀</h2>
+            <p class="text-gray-600 text-[22px] font-bold">Help us spread the word about $BOB!</p>
+        </div>
+
+        <!-- Wallet Card -->
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-xl p-8 shadow-lg cartoon-card" style="transform: translate(0)">
+                <!-- Added SpongeBob Image -->
+                <div class="relative">
+                    <img src="{% static 'images/1.png' %}" alt="SpongeBob Money" class="w-32 absolute -top-24 -right-8 transform rotate-12">
+                </div>
+
+                <h3 class="font-['Bangers'] text-3xl text-center mb-6 text-ocean-blue">Development Wallet</h3>
+                
+                <!-- Added Development Info -->
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <p class="text-lg text-blue-800 font-cartoon mb-3 font-bold">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        All donations to this wallet directly support:
+                    </p>
+                    <ul class="list-none space-y-2">
+                        <li><span class="font-bold mr-2">💬</span> Marketing campaigns to spread awareness</li>
+                        <li><span class="font-bold mr-2">📈</span> Trending and visibility initiatives</li>
+                        <li><span class="font-bold mr-2">🚀</span> Community growth and engagement efforts</li>
+                    </ul>
+                </div>
+                
+                <!-- Wallet Address Display -->
+                <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                    <div class="flex flex-col md:flex-row items-center gap-4">
+                        <code class="md:text-lg font-mono text-sm text-center w-full break-all" id="walletAddress">
+                            2kwzFpQ3M5jczbVFxkkrrQp4qcVjTpF6EWdK155XLheU
+                        </code>
+                        <button onclick="copyWalletAddress()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg transition-all flex items-center gap-2 whitespace-nowrap">
+                            <i class="fas fa-copy"></i>
+                            <span>Copy</span>
+                        </button>
+                    </div>
+                    <div id="copySuccess" class="hidden mt-2 text-green-600 text-sm flex items-center justify-center md:justify-end gap-1">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Successfully copied to clipboard!</span>
+                    </div>
+                </div>
+                
+                <!-- Marketing Support Info -->
+                <div class="text-center">
+                    <p class="text-xl mb-4 font-cartoon">Every donation helps us:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <i class="fas fa-ad text-3xl text-blue-500 mb-2"></i>
+                            <p class="font-bold">Boost Marketing</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <i class="fas fa-chart-line text-3xl text-green-500 mb-2"></i>
+                            <p class="font-bold">Increase Visibility</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Thank You Message -->
+                    <div class="mt-6 bg-yellow-50 p-6 rounded-lg border-2 border-yellow-300 animate__animated animate__bounceIn">
+                        <i class="fas fa-heart text-4xl text-red-500 mb-3"></i>
+                        <h4 class="font-['Bangers'] text-2xl text-yellow-600 mb-2">Thank You for Your Support! 🌟</h4>
+                        <p class="text-gray-700 font-bold">Your contribution makes a splash in the Bikini Bottom community!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="community" class="py-16 relative">
     <!-- Updated background colors to light yellow -->
     <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-yellow-100/70 opacity-70"></div>
@@ -57,7 +136,7 @@
             <h2 class="text-[60px] mb-3 font-['Bangers'] text-ocean-blue">Meet the Bikini Bottom Gang! 🌊</h2>
             <p class="text-gray-600 text-[22px] font-bold">Where Every Citizen is Living the $BOB Life!</p>
         </div>
-
+        
         <div class="flex flex-col lg:flex-row items-center gap-8">
             <!-- Left Side Stats -->
             <div class="w-full lg:w-1/2 space-y-6">
@@ -143,7 +222,6 @@
         </div>
     </div>
 </section>
-
 
 
 <section class="krabby-counter py-12 bg-light-blue shadow-2xl">
@@ -272,7 +350,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 0 4px #FFD700;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
+    
     .cartoon-card:hover {
         transform: translateY(-10px) rotate(-2deg);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 0 4px #FFD700;
@@ -477,6 +555,28 @@
         border-color: #ffffff transparent transparent transparent;
         z-index: 2;
     }
+
+    #copySuccess {
+        animation: fadeInUp 0.3s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes bounce-in {
+        0% { transform: translateX(100%) scale(0.3); }
+        50% { transform: translateX(0) scale(1.1); }
+        70% { transform: translateX(0) scale(0.9); }
+        100% { transform: translateX(0) scale(1); }
+    }
     </style>
     
 {% endblock %} 
@@ -490,6 +590,31 @@
             });
         });
     });
+
+    function copyWalletAddress() {
+        const walletAddress = document.getElementById('walletAddress').textContent.trim();
+        const button = event.target.closest('button');
+        const successMessage = document.getElementById('copySuccess');
+        
+        navigator.clipboard.writeText(walletAddress).then(() => {
+            // Show success message
+            successMessage.classList.remove('hidden');
+            
+            // Update button
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+            button.classList.remove('bg-blue-500', 'hover:bg-blue-600');
+            button.classList.add('bg-green-500', 'hover:bg-green-600');
+            
+            // Reset button and hide success message after delay
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('bg-green-500', 'hover:bg-green-600');
+                button.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                successMessage.classList.add('hidden');
+            }, 5000);
+        });
+    }
 </script>
 <script src="/static/js/main.js"></script>
 {% endblock %}
