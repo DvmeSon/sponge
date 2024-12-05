@@ -5,7 +5,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<section id="home" class="hero-section" style="background-image: url('{% static 'images/main-3.jpg' %}'); background-size: cover; background-position: center; min-height: 90vh; overflow: hidden;">
+<section id="home" class="hero-section !pb-[400px]" style="background-image: url('{% static 'images/main-3.jpg' %}'); background-size: cover; background-position: center; min-height: 90vh; overflow: visible;">
     <!-- Floating Bubbles -->
     <div class="bubbles">
         <div class="bubble"></div>
@@ -17,15 +17,15 @@
     </div>
 
     <div class="hero-content text-center absolute top-0" style="padding-top: 6rem;">        
-        <h1 class="cartoon-title mb-0" style="font-family: 'Bangers', cursive;">Are Ya Ready, Kids?<br>$BOB is Here! 🧽</h1>
+        <h1 class="cartoon-title mb-0" style="font-family: 'Bangers', cursive;">Are Ya Ready, Kids?<br>$BOB Community CTO is Here! 🧽</h1>
         <p class="cartoon-subtitle">The cryptocurrency that lives in a pineapple under the sea!</p>
         
         <!-- Cartoon Style Buttons -->
         <div class="d-flex justify-content-center gap-8 mb-10 animate__animated animate__fadeInUp animate__delay-1s">
-            <a href="https://x.com/sponge_cto" target="_blank" class="cartoon-button secondary h-[68px]" style="background-color: #000000;">
+            <a href="https://x.com/Spongebobsol0" target="_blank" class="cartoon-button secondary h-[68px]" style="background-color: #000000;">
                 <i class="fab fa-x button-icon"></i>
             </a>
-            <a href="https://t.me/+iZkHaACzz6o2M2Ex" target="_blank" class="cartoon-button secondary" style="background-color: #0088cc;">
+            <a href="https://t.me/spongebobCTO_sol" target="_blank" class="cartoon-button secondary" style="background-color: #0088cc;">
                 <span class="button-text">Telegram</span>
                 <i class="fab fa-telegram button-icon"></i>
             </a>
@@ -33,22 +33,56 @@
                 <span class="button-text">Discord</span>
                 <i class="fab fa-discord button-icon"></i>
             </a>
-            <a href="https://www.tiktok.com/@spongebobthecoin" target="_blank" class="cartoon-button secondary" style="background-color: #000000;">
+            <a href="https://www.tiktok.com/@spongebobcto?_t=8rw0YWZJJmS&_r=1" target="_blank" class="cartoon-button secondary" style="background-color: #000000;">
                 <span class="button-text">TikTok</span>
                 <i class="fab fa-tiktok button-icon"></i>
             </a>
         </div>
-        <a href="https://dexscreener.com/solana/bnkugh5znm5wcghgma4jkxp8xifukhlfxzm9fkmv6er8" target="_blank" class="cartoon-button primary !text-[42px] absolute bottom-[-480px]">
+        <a href="https://dexscreener.com/solana/bnkugh5znm5wcghgma4jkxp8xifukhlfxzm9fkmv6er8" target="_blank" class="cartoon-button primary !text-[42px] absolute bottom-[-250px]">
             <span class="button-text">Buy $BOB</span>
             <i class="fas fa-coins button-icon"></i>
         </a>
     </div>
-
 </section>
 
+<!-- Modified contact banner container -->
+<div class="relative w-full" style="height: 0; margin-top: -150px; margin-bottom: 150px; z-index: 10;">
+    <!-- Updated contact banner positioning -->
+    <div class="contact-banner w-full">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-yellow-300 p-6 rounded-[30px] shadow-xl border-8 border-dashed border-yellow-400 relative overflow-hidden">
+                <!-- Sponge holes decoration -->
+                <div class="absolute inset-0">
+                    <div class="sponge-hole"></div>
+                    <div class="sponge-hole"></div>
+                    <div class="sponge-hole"></div>
+                    <div class="sponge-hole"></div>
+                    <div class="sponge-hole"></div>
+                </div>
+                
+                <div class="relative z-10 text-center">
+                    <h4 class="font-['Bangers'] text-4xl mb-4 text-blue-600">
+                        Need Help? Drop us a Kelp Mail! 📬
+                    </h4>
+                    <p class="text-xl mb-6 font-['Comic Sans MS'] text-blue-800">
+                        "I'm not just ready, I'm really really ready!" - SpongeBob
+                    </p>
+                    <div class="bg-white/90 rounded-xl p-4 inline-block">
+                        <a href="mailto:support@spongebob.com" class="flex items-center gap-3 text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
+                            <i class="fas fa-envelope-open-text text-2xl"></i>
+                            community@bobcto.fun
+                        </a>
+                    </div>
+                    <p class="mt-4 text-blue-800 font-bold">
+                        Available 24/7 (Even during Jellyfish Season! 🎐)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-<section class="wallet-section pb-24 pt-12 relative bg-[#F4F7EF] shadow-xl">
+<section class="wallet-section pb-24 pt-[200px] relative bg-[#F4F7EF] shadow-xl">
     <!-- Background styling similar to other sections -->
     <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-yellow-100/70 opacity-70"></div>
     <div class="absolute inset-0" style="background-image: url('{% static 'images/bubble-pattern.png' %}'); opacity: 0.1;"></div>
@@ -125,8 +159,7 @@
     </div>
 </section>
 
-<section class="roadmap-section py-16 relative bg-[#c2e9fb] overflow-hidden">
-    <!-- Enhanced Floating Bubbles -->
+<!-- <section class="roadmap-section py-16 relative bg-[#c2e9fb] overflow-hidden">
     <div class="bubbles">
         <div class="bubble-alt"></div>
         <div class="bubble-alt"></div>
@@ -144,29 +177,23 @@
         </div>
 
         <div class="relative">
-            <!-- Enhanced connecting paths -->
             <div class="absolute w-full h-[95%] top-0 left-0 z-0">
                 <svg viewBox="0 0 1200 800" preserveAspectRatio="none" class="w-full h-[90%]">
-                    <!-- Phase 1 to Phase 2 connection (left to right, slightly up) -->
                     <path d="M400,200 C600,200 600,300 800,300" 
                           class="path-animation"
                           style="fill:none; stroke:#FFD700; stroke-width:8; stroke-dasharray:15,15"/>
                     
-                    <!-- Phase 2 to Phase 3 connection (right to left, down) -->
                     <path d="M800,350 C600,350 600,450 400,450" 
                           class="path-animation"
                           style="fill:none; stroke:#FFD700; stroke-width:8; stroke-dasharray:15,15"/>
                     
-                    <!-- Phase 3 to Phase 4 connection (left to right, slightly up) -->
                     <path d="M400,500 C600,500 600,600 800,600" 
                           class="path-animation"
                           style="fill:none; stroke:#FFD700; stroke-width:8; stroke-dasharray:15,15"/>
                 </svg>
             </div>
 
-            <!-- Roadmap items -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-                <!-- Phase 1 -->
                 <div class="roadmap-item mt-12">
                     <div class="bg-white p-6 rounded-[30px] shadow-lg cartoon-card relative border-4 border-yellow-400 transition-all" style="transform: none !important;">
                         <div class="absolute -top-16 -right-8 w-32 h-32 bg-white rounded-full border-4 border-yellow-400 overflow-hidden rotate-12 shadow-lg">
@@ -176,7 +203,7 @@
                         <ul class="space-y-3 font-['Comic Sans MS']">
                             <li class="flex items-center gap-2 text-lg">
                                 <span class="text-2xl">🚀</span>
-                                <span>Token Launch</span>
+                                <span>lorem</span>
                             </li>
                             <li class="flex items-center gap-2 text-lg">
                                 <span class="text-2xl">🌊</span>
@@ -194,7 +221,6 @@
                     </div>
                 </div>
 
-                <!-- Phase 2 -->
                 <div class="roadmap-item md:mt-48">
                     <div class="bg-white p-6 rounded-[30px] shadow-lg cartoon-card relative border-4 border-yellow-400 transition-all" style="transform: none !important;">
                         <div class="absolute -top-16 -right-8 w-32 h-32 bg-white rounded-full border-4 border-yellow-400 overflow-hidden rotate-12 shadow-lg">
@@ -222,7 +248,6 @@
                     </div>
                 </div>
 
-                <!-- Phase 3 -->
                 <div class="roadmap-item mt-0">
                     <div class="bg-white p-6 rounded-[30px] shadow-lg cartoon-card relative border-4 border-yellow-400 transition-all" style="transform: none !important;">
                         <div class="absolute -top-16 -right-8 w-32 h-32 bg-white rounded-full border-4 border-yellow-400 overflow-hidden rotate-12 shadow-lg">
@@ -250,7 +275,6 @@
                     </div>
                 </div>
 
-                <!-- Phase 4 -->
                 <div class="roadmap-item md:mt-48">
                     <div class="bg-white p-6 rounded-[30px] shadow-lg cartoon-card relative border-4 border-yellow-400 transition-all" style="transform: none !important;">
                         <div class="absolute -top-16 -right-8 w-32 h-32 bg-white rounded-full border-4 border-yellow-400 overflow-hidden rotate-12 shadow-lg">
@@ -279,7 +303,6 @@
                 </div>
             </div>
 
-            <!-- Enhanced bottom decoration -->
             <div class="text-center mt-20">
                 <div class="bg-white inline-block p-8 rounded-[30px] shadow-xl border-4 border-yellow-400 transform hover:scale-105 transition-transform">
                     <p class="font-['Bangers'] text-2xl text-blue-600 mb-0">
@@ -289,7 +312,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <section id="community" class="py-16 relative">
     <!-- Updated background colors to light yellow -->
     <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-yellow-100/70 opacity-70"></div>
@@ -377,7 +400,7 @@
             <div class="bg-white rounded-xl p-6 shadow-lg inline-block relative z-10 border-4 border-blue-300 hover:border-blue-400 transition-all">
                 <h4 class="mb-3 font-['Bangers'] text-3xl text-blue-600">Ready to Join the Fun? 🎉</h4>
                 <p class="mb-4 text-lg text-black">Grab your jellyfishing net and dive into the most exciting community under the sea!</p>
-                <a href="https://t.me/+iZkHaACzz6o2M2Ex" target="_blank">
+                <a href="https://t.me/spongebobCTO_sol" target="_blank">
                 <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg transition-all transform hover:scale-105 hover:shadow-xl">
                     <i class="fas fa-fish mr-2"></i>
                     Join the Telegram School
@@ -1049,6 +1072,41 @@
 
     .krabs-money-group:hover {
         transform: scale(1.05);
+    }
+
+    /* Add to your existing style section */
+    .sponge-hole {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: rgba(0,0,0,0.1);
+        border-radius: 50%;
+    }
+
+    .sponge-hole:nth-child(1) { top: 10%; left: 10%; }
+    .sponge-hole:nth-child(2) { top: 30%; left: 25%; }
+    .sponge-hole:nth-child(3) { top: 15%; right: 20%; }
+    .sponge-hole:nth-child(4) { bottom: 20%; left: 15%; }
+    .sponge-hole:nth-child(5) { bottom: 30%; right: 25%; }
+
+    .contact-banner {
+        width: 100%;
+        z-index: 20;
+    }
+
+    /* Remove the existing contact-banner transform rotation for better positioning */
+    .contact-banner {
+        transform: none;
+    }
+
+    .contact-banner:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+    }
+
+    .contact-banner .bg-yellow-300 {
+        background-image: linear-gradient(45deg, #ffd700 25%, #ffed4a 25%, #ffed4a 50%, #ffd700 50%, #ffd700 75%, #ffed4a 75%, #ffed4a 100%);
+        background-size: 56.57px 56.57px;
     }
 </style>
     
