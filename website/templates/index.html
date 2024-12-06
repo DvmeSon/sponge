@@ -16,29 +16,30 @@
         <div class="bubble"></div>
     </div>
 
-    <div class="hero-content text-center absolute top-0" style="padding-top: 6rem;">        
-        <h1 class="cartoon-title mb-0" style="font-family: 'Bangers', cursive;">Are Ya Ready, Kids?<br>$BOB Community CTO is Here! 🧽</h1>
-        <p class="cartoon-subtitle">The cryptocurrency that lives in a pineapple under the sea!</p>
+    <div class="hero-content text-center absolute top-0 max-[1024px]:px-4" style="padding-top: 6rem;">        
+        <h1 class="cartoon-title mb-0 max-[1024px]:text-[52px]" style="font-family: 'Bangers', cursive;">Are Ya Ready, Kids?<br>$BOB Community CTO is Here! 🧽</h1>
+        <p class="cartoon-subtitle max-[1024px]:text-[22px]">The cryptocurrency that lives in a pineapple under the sea!</p>
         
         <!-- Cartoon Style Buttons -->
-        <div class="d-flex justify-content-center gap-8 mb-10 animate__animated animate__fadeInUp animate__delay-1s">
-            <a href="https://x.com/Spongebobsol0" target="_blank" class="cartoon-button secondary h-[68px]" style="background-color: #000000;">
+        <div class="flex-col max-[1024px]:flex lg:flex-row gap-8 mb-10 animate__animated animate__fadeInUp animate__delay-1s justify-center">
+            <a href="https://x.com/Spongebobsol0" target="_blank" class="cartoon-button secondary h-[68px] max-[1024px]:w-[200px] max-[1024px]:mx-auto text-center flex items-center justify-center" style="background-color: #000000;">
+                <span class="button-text"></span>
                 <i class="fab fa-x button-icon"></i>
             </a>
-            <a href="https://t.me/spongebobCTO_sol" target="_blank" class="cartoon-button secondary" style="background-color: #0088cc;">
+            <a href="https://t.me/spongebobCTO_sol" target="_blank" class="cartoon-button secondary h-[68px] max-[1024px]:w-[200px] max-[1024px]:mx-auto flex items-center justify-center" style="background-color: #0088cc;">
                 <span class="button-text">Telegram</span>
-                <i class="fab fa-telegram button-icon"></i>
+                <i class="fab fa-telegram button-icon ml-2"></i>
             </a>
-            <a href="https://discord.gg/5m56mYMc" target="_blank" class="cartoon-button secondary" style="background-color: #5865F2;">
+            <a href="https://discord.gg/5m56mYMc" target="_blank" class="cartoon-button secondary h-[68px] max-[1024px]:w-[200px] max-[1024px]:mx-auto flex items-center justify-center" style="background-color: #5865F2;">
                 <span class="button-text">Discord</span>
-                <i class="fab fa-discord button-icon"></i>
+                <i class="fab fa-discord button-icon ml-2"></i>
             </a>
-            <a href="https://www.tiktok.com/@spongebobcto?_t=8rw0YWZJJmS&_r=1" target="_blank" class="cartoon-button secondary" style="background-color: #000000;">
+            <a href="https://www.tiktok.com/@spongebobcto?_t=8rw0YWZJJmS&_r=1" target="_blank" class="cartoon-button secondary h-[68px] max-[1024px]:w-[200px] max-[1024px]:mx-auto flex items-center justify-center" style="background-color: #000000;">
                 <span class="button-text">TikTok</span>
-                <i class="fab fa-tiktok button-icon"></i>
+                <i class="fab fa-tiktok button-icon ml-2"></i>
             </a>
         </div>
-        <a href="https://dexscreener.com/solana/bnkugh5znm5wcghgma4jkxp8xifukhlfxzm9fkmv6er8" target="_blank" class="cartoon-button primary !text-[42px] absolute bottom-[-250px]">
+        <a href="https://dexscreener.com/solana/bnkugh5znm5wcghgma4jkxp8xifukhlfxzm9fkmv6er8" target="_blank" class="cartoon-button primary !text-[42px] absolute bottom-[-25px] lg:bottom-[-250px]">
             <span class="button-text">Buy $BOB</span>
             <i class="fas fa-coins button-icon"></i>
         </a>
@@ -46,7 +47,7 @@
 </section>
 
 <!-- Modified contact banner container -->
-<div class="relative w-full" style="height: 0; margin-top: -150px; margin-bottom: 150px; z-index: 10;">
+<div class="relative w-full mt-[-150px] mb-[120px] lg:mb-[150px]" style="height: 0; z-index: 10;">
     <!-- Updated contact banner positioning -->
     <div class="contact-banner w-full">
         <div class="max-w-3xl mx-auto">
@@ -64,8 +65,8 @@
                     <h4 class="font-['Bangers'] text-4xl mb-4 text-blue-600">
                         Need Help? Drop us a Kelp Mail! 📬
                     </h4>
-                    <p class="text-xl mb-6 font-['Comic Sans MS'] text-blue-800">
-                        "I'm not just ready, I'm really really ready!" - SpongeBob
+                    <p class="sm:text-xl mb-6 font-['Comic Sans MS'] text-blue-800">
+                        "I'm not just ready, I'm really really ready!" <br> ~ SpongeBob
                     </p>
                     <div class="bg-white/90 rounded-xl p-4 inline-block">
                         <a href="mailto:community@bobcto.fun" class="flex items-center gap-3 text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
@@ -82,15 +83,15 @@
     </div>
 </div>
 
-<section class="wallet-section pb-24 pt-[200px] relative bg-[#F4F7EF] shadow-xl">
+<section class="wallet-section pb-24 pt-[250px] sm:pt-[200px] relative bg-[#F4F7EF] shadow-xl">
     <!-- Background styling similar to other sections -->
     <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-yellow-100/70 opacity-70"></div>
     <div class="absolute inset-0" style="background-image: url('{% static 'images/bubble-pattern.png' %}'); opacity: 0.1;"></div>
 
     <div class="container mx-auto px-4 relative text-black">
-        <div class="text-center mb-12 max-[768px]:mb-20">
-            <h2 class="text-[60px] mb-3 font-['Bangers'] text-ocean-blue">Support the Krusty Krab! 🦀</h2>
-            <p class="text-gray-600 text-[22px] font-bold">Help us spread the word about $BOB!</p>
+        <div class="text-center mb-12 max-[768px]:mb-20 px-4">
+            <h2 class="text-[48px] lg:text-[60px] leading-[1.2] mb-3 font-['Bangers'] text-ocean-blue">Support the Krusty Krab! 🦀</h2>
+            <p class="text-gray-600 text-[20px] sm:text-[22px] font-bold">Help us spread the word about $BOB!</p>
         </div>
 
         <!-- Wallet Card -->
@@ -321,8 +322,8 @@
     <div class="container mx-auto px-4 relative">  <!-- Added relative for z-index context -->
         <!-- Section Header -->
         <div class="text-center mb-12">
-            <h2 class="text-[60px] mb-3 font-['Bangers'] text-ocean-blue">Meet the Bikini Bottom Gang! 🌊</h2>
-            <p class="text-gray-600 text-[22px] font-bold">Where Every Citizen is Living the $BOB Life!</p>
+            <h2 class="text-[48px] lg:text-[60px] leading-[1.2] mb-3 font-['Bangers'] text-ocean-blue">Meet the Bikini Bottom Gang! 🌊</h2>
+            <p class="text-gray-600 text-[20px] sm:text-[22px] font-bold">Where Every Citizen is Living the $BOB Life!</p>
         </div>
         
         <div class="flex flex-col lg:flex-row items-end md:items-center gap-8">
@@ -411,11 +412,11 @@
     </div>
 </section>
 
-<section class="krabby-counter py-12 shadow-2xl bg-[#c2e9fb] relative">
+<section class="krabby-counter py-12 shadow-2xl bg-[#c2e9fb] relative max-[768px]:overflow-hidden">
     <div class="container text-center mx-auto relative">
         <!-- Background Restaurant Image -->
         <div class="absolute left-[-80px] bottom-[-450px] transform -translate-y-1/2 w-[600px] opacity-80">
-            <img src="{% static 'images/krab-restaurant.png' %}" alt="Krusty Krab" class="w-full h-full object-contain">
+            <img src="{% static 'images/krab-restaurant.png' %}" alt="Krusty Krab" class="max-[768px]:hidden w-full h-full object-contain">
         </div>
 
         <!-- Enhanced Floating Bubbles -->
@@ -436,7 +437,7 @@
             <div id="moneyPopups" class="money-popups"></div>
             
             <!-- Krabs Quote Bubble with Money Stack -->
-            <div class="quote-container mb-6 h-[100px] absolute top-[150px] right-[-299px]">
+            <div class="quote-container mb-6 h-[100px] absolute top-[150px] right-[-299px] hidden md:block">
                 <div id="krabsQuote" class="speech-bubble hidden">
                     Ahoy! Click those patties to make me money! Ar ar ar ar! 🦀
                 </div>
@@ -484,14 +485,14 @@
     </div>
 </section>
 
-<section class="quotes-section pb-10 pt-32 relative">
+<section class="quotes-section pb-10 pt-10 md:pt-32 relative max-[768px]:overflow-hidden">
     <!-- Updated background colors to light yellow -->
     <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-yellow-100/70 opacity-70"></div>
     <div class="absolute inset-0" style="background-image: url('{% static 'images/bubble-pattern.png' %}'); opacity: 0.1;"></div>
 
     <div class="container text-center relative mx-auto">
-        <img class="absolute left-[254px] top-[-60px]" width="250" src="{% static 'images/squidward.png' %}" alt="Squidward" class="squidward-image mb-4">
-        <h2 class="mb-10 font-['Bangers'] text-4xl text-shadow-lg text-ocean-blue relative z-10">Words of Wisdom 🌊</h2>
+        <img class="hidden md:block absolute lg:left-[50px] left-[-50px] 2xl:left-[254px] top-[-60px]" width="250" src="{% static 'images/squidward.png' %}" alt="Squidward" class="squidward-image mb-4">
+        <h2 class="mb-10 font-['Bangers'] text-[48px] leading-[1.2] mb-3 font-['Bangers'] text-ocean-blue">Words of Wisdom 🌊</h2>
         <div class="quote-box !bg-white p-6 rounded-xl shadow-lg inline-block relative z-10 border-4 border-blue-300 hover:border-blue-400 transition-all">
             <p class="quote-text mb-3 font-['Bangers'] !text-[32px] text-blue-600">"I'm ready, I'm ready, I'm ready... <br>to buy $BOB!"</p>
             <p class="quote-author text-lg !text-spongebob-brown font-cartoon">~ Squidward</p>
